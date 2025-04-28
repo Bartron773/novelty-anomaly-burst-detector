@@ -1,0 +1,43 @@
+{
+  "algorithm_name": "Recursive Novelty & Anomaly Discriminator (RNAD)",
+  "description": "Detects true creative novelty versus noisy anomalies in Human Creative Burst Logs (HCBL).",
+  "steps": [
+    {
+      "step": 1,
+      "title": "Define Context",
+      "details": "Identify the definition of novelty and anomaly based on creative burst patterns. Example: Novelty is valid new creative direction; anomaly is incoherent deviation."
+    },
+    {
+      "step": 2,
+      "title": "Select Algorithms",
+      "details": {
+        "novelty_detection": [
+          "Embedding-based comparison (e.g., Word2Vec, Sentence Transformers)",
+          "Autoencoder latent space analysis for reconstruction error"
+        ],
+        "anomaly_detection": [
+          "Density estimation (Kernel Density Estimation - KDE)",
+          "Isolation Forest for sparse outliers"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "title": "Evaluate Overlaps",
+      "details": "Compare detected novelties and anomalies. Cluster outputs and compute similarity distances (cosine similarity or Euclidean) to differentiate meaningful bursts from noise."
+    },
+    {
+      "step": 4,
+      "title": "Visualize Results",
+      "details": {
+        "methods": [
+          "Scatter plots: Novelty vs. Anomaly Scores",
+          "Heatmaps: Burst similarity matrices",
+          "Dimensionality Reduction: PCA or t-SNE for burst embedding visualization"
+        ],
+        "goal": "Provide a clear visual separation between creative novelty, valid drift, and incoherent anomaly."
+      }
+    }
+  ],
+  "final_output": "Structured burst tags: { 'novelty': true/false, 'anomaly': true/false, 'confidence_score': float } for each creative burst event."
+}
